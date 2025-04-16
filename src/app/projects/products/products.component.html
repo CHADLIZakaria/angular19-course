@@ -1,0 +1,29 @@
+<div>
+    <h3>Selected Product: {{numberProductSelected()}}</h3>
+    <h5>Total Price: {{totalProductSelected()}}</h5>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Selected</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(product of products(); track product.id) {
+                <tr>
+                    <td>{{product.id}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    @if(product.selected) {
+                        <td><button (click)="select(product)">Selected</button></td>
+                    }
+                    @else {
+                        <td><button (click)="select(product)">Remove</button></td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
