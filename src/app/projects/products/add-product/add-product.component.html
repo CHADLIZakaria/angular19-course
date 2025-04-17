@@ -1,0 +1,13 @@
+<form [formGroup]="produtForm" (ngSubmit)="save()">
+    <table>
+        <tbody>
+            <tr>
+                <td></td>
+                <td><input type="text" formControlName="name"/></td>
+                <td><input type="text" formControlName="price"/></td>
+                <td><input type="checkbox" formControlName="selected"/></td>
+                <td><button>Add</button></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
